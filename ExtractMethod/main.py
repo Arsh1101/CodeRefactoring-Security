@@ -3,7 +3,7 @@ from datetime import datetime
 
 class BeforeRefactoring:
     def login(username: str, password: str) -> str:
-        #File access and Debug 💀
+        #File access, Debug, Validations on inputs... 💀
         # check user
         with open("users.txt", "r") as file:
             for line in file:
@@ -21,7 +21,7 @@ class BeforeRefactoring:
 
 class AfterRefactoring:
     def login(username: str, password: str) -> str:
-        #File access and debug! 🤓
+        #Solved!🤓
         if AfterRefactoring.is_valid_user(username, password):
             AfterRefactoring.set_log(username)
             return "Welcome! 😊"
