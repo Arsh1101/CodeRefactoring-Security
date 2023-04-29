@@ -32,8 +32,9 @@ class BeforeRefactoring:
 
 
 class AfterRefactoring:
-   #Cod flow is protectet by private access to the components of the class 🤓
-   # The magical '_' in Python! 🪄🐍
+   # You can encapsulate by either using single underscore as protected member access or double underscore as private member access
+   # In this case, we decided to encapsulate the code flow applying protected access by using single underscore '_' to the components of the class 🤓
+   # The magical single underscore '_' in Python! 🪄🐍
     def __init__(self, username, password):
         self._username = username
         self._password = password
