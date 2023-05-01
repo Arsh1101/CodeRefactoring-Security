@@ -32,7 +32,7 @@ class BeforeRefactoring:
 
 
 class AfterRefactoring:
-   #Cod flow is protectet by private access to the components of the class 🤓
+   # The code flow is protected by protected access to the components of the class 🤓
    # The magical '_' in Python! 🪄🐍
     def __init__(self, username, password):
         self._username = username
