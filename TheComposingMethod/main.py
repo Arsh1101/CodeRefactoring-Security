@@ -1,21 +1,21 @@
 from datetime import datetime
 
-class GenrealSampleClass:
+class GeneralSampleClass:
     def get_request_list(request:str) -> list:
         return request.split(":")
 
 
     def is_authenticated(request):
-        temp = GenrealSampleClass.get_request_list(request)
+        temp = GeneralSampleClass.get_request_list(request)
         return True if temp[0] == "user" and temp[1] == "pass" else False
 
 
     def is_authorized(request):
-        return True if GenrealSampleClass.get_request_list(request)[2] == "admin" else False
+        return True if GeneralSampleClass.get_request_list(request)[2] == "admin" else False
 
     
     def is_valid_request(request):
-        temp = GenrealSampleClass.get_request_list(request)
+        temp = GeneralSampleClass.get_request_list(request)
         return True if temp[3] == "http" and temp[4] == "get" else False
     
     
@@ -27,10 +27,10 @@ class BeforeRefactoring:
     def handle_request(request):
         # Simple is better! 💀
         # It is hard to manage thats why there is hight probibilty of mistace on auth here.
-        if GenrealSampleClass.is_authenticated(request):
-            if GenrealSampleClass.is_authorized(request):
-                if GenrealSampleClass.is_valid_request(request):
-                    return GenrealSampleClass.process_request(request)
+        if GeneralSampleClass.is_authenticated(request):
+            if GeneralSampleClass.is_authorized(request):
+                if GeneralSampleClass.is_valid_request(request):
+                    return GeneralSampleClass.process_request(request)
                 else:
                     return 'Invalid request'
             else:
@@ -42,16 +42,16 @@ class BeforeRefactoring:
 class AfterRefactoring:
     # Simple is better! 🤓
     def handle_request(request):
-        if not GenrealSampleClass.is_authenticated(request):
+        if not GeneralSampleClass.is_authenticated(request):
             return 'Not authenticated'
 
-        if not GenrealSampleClass.is_authorized(request):
+        if not GeneralSampleClass.is_authorized(request):
             return 'Not authorized'
 
-        if not GenrealSampleClass.is_valid_request(request):
+        if not GeneralSampleClass.is_valid_request(request):
             return 'Invalid request'
 
-        return GenrealSampleClass.process_request(request)
+        return GeneralSampleClass.process_request(request)
 
 
 if __name__ == "__main__":
