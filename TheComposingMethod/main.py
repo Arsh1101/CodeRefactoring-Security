@@ -26,7 +26,7 @@ class GeneralSampleClass:
 class BeforeRefactoring:
     def handle_request(request):
         # Simple is better! 💀
-        # It is hard to manage thats why there is hight probibilty of mistace on auth here.
+        # It is hard to manage; that is why there is high probability of mistake on authentication here.
         if GeneralSampleClass.is_authenticated(request):
             if GeneralSampleClass.is_authorized(request):
                 if GeneralSampleClass.is_valid_request(request):
@@ -56,7 +56,7 @@ class AfterRefactoring:
 
 if __name__ == "__main__":
     print("Hi! This is a test for The Composing Method refactoring to check the security: 🧪")
-    print("This is example of a module, which respons to a http get to admin user.")
+    print("This is example of a module, which responds to a http get to admin user.")
     print("Before refactoring... 🚫🔃")
     username = input("Username:")
     password = input("Password:")
